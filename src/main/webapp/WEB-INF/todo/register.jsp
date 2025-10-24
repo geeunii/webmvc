@@ -12,7 +12,18 @@
 </head>
 <body>
 <form action="/todo/register" method="post">
-    <button type="submit">글 등록 처리</button>
+    <div>
+        <label for="title"></label>
+        <input type="text" name="title" id="title" placeholder="INSERT TITLE">
+    </div>
+    <div>
+        <label for="dueDate"></label>
+        <input type="date" name="dueDate" id="dueDate">
+    </div>
+    <div>
+        <button type="submit">REGISTER</button>
+        <button type="reset">RESET</button>
+    </div>
 </form>
 </body>
 </html>

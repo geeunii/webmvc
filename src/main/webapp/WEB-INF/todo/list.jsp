@@ -12,25 +12,28 @@
     <title>Todo List</title>
 </head>
 <body>
-<h1>Todo List Page</h1>
+<h1>Todo List</h1>
 
 <%--EL(Expression Language)
-    간단한 표현식을 이용해서 데이터를 출력하는 용도로 사용하는 표현 언어
-${list}
+    간단한 표현식을 이용해서 데이터를 출력하는 용도로 사용하는 표현 언어--%>
+<%--${list}
 <h4>${list[0].tno}</h4>
 <h4>${list[0].title}</h4>
 <h4>${list[0].dueDate}</h4>--%>
 
-<%--<ul>
-    <c:forEach var="dto" items="${list}">
-        <li>${dto}</li>
+<ul>
+    <c:forEach var="dto" items="${dtoList}">
+        <a href="/todo/read?tno=${dto.tno}">
+            <li>${dto.tno} ${dto.title} ${dto.dueDate} ${dto.finished}</li>
+        </a>
     </c:forEach>
 </ul>
-<c:forEach var="num" begin="1" end="10">
-    <li>${num}</li>
-</c:forEach>
 
-<c:if test="${list.size() % 2 == 0}">
+<%--<c:forEach var="num" begin="1" end="10">
+    <li>${num}</li>
+</c:forEach>--%>
+
+<%--<c:if test="${list.size() % 2 == 0}">
     짝수
 </c:if>
 <c:if test="${list.size() % 2 != 0}">
